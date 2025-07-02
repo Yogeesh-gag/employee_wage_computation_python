@@ -1,5 +1,6 @@
 import random
 
+#UC1 To Check Employee Attendance
 # Function to check whether the employee is present or absent
 def check_employee_attendence():
     # Generate a random number: 0 for Absent, 1 for Present
@@ -10,3 +11,12 @@ def check_employee_attendence():
         print("Employee is Present")
     else:
         print("Employee is Absent")
+
+# UC2-calculate and print daily wage
+
+# Function to calculate daily wage of an employee
+def calculate_daily_wage():
+    wage_per_hour = 20      # Fixed wage per hour (in currency units)
+    full_day_hour = 8       # Fixed number of working hours in a full day
+    daily_wage = wage_per_hour * full_day_hour  # Calculate daily wage
+    print(f"Daily Wage: ${daily_wage}")  # Display the calculated daily wage
