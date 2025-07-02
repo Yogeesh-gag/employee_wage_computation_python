@@ -1,8 +1,6 @@
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press F9 to toggle the breakpoint.
+# importing the employee_wage file to access the functions
+import employee_wage
 
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('Welocme to Python Program')
+    # UC1 Test: Call the function to test employee attendance
+    employee_wage.check_employee_attendence()
