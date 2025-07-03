@@ -1,5 +1,6 @@
 # importing the employee_wage file to access the functions
 import employee_wage
+from employee_wage import EmployeeWage
 
 if __name__ == '__main__':
     # UC1 Test: Call the function to test employee attendance
@@ -19,3 +20,6 @@ if __name__ == '__main__':
 
     # UC6 Test: Call the function to compute wage with working hour/day constraints
     employee_wage.calculate_wage_till_condition()
+
+    # UC7 Test: Call class method to compute wage
+    EmployeeWage.compute_employee_wage()
