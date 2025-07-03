@@ -1,6 +1,7 @@
 # importing the employee_wage file to access the functions
 import employee_wage
 from employee_wage import EmployeeWage
+from employee_wage import EmployeeWageUC8
 
 if __name__ == '__main__':
     # UC1 Test: Call the function to test employee attendance
@@ -23,3 +24,8 @@ if __name__ == '__main__':
 
     # UC7 Test: Call class method to compute wage
     EmployeeWage.compute_employee_wage()
+
+    # UC8 Test:  Example usage for multiple companies with different wage/hour/day constraints
+    EmployeeWageUC8.compute_employee_wage("TCS", 25, 20, 100)
+    EmployeeWageUC8.compute_employee_wage("Infosys", 20, 22, 120)
+    EmployeeWageUC8.compute_employee_wage("Wipro", 18, 26, 110)

@@ -115,7 +115,7 @@ def calculate_wage_till_condition():
     # Final output after loop ends
     print(f"\nTotal Days Worked: {total_days}")
     print(f"Total Hours Worked: {total_hours}")
-    print(f"Total Wage: ₹{total_wage}")
+    print(f"Total Wage: {total_wage}")
 
 
 # UC7 Refactor using class, class variables and class method
@@ -155,4 +155,39 @@ class EmployeeWage:
             print(f"Day {total_days}: Hours = {emp_hours}, Daily Wage = ₹{daily_wage}")
 
         # Final total wage output
-        print(f"\nTotal Wage for the Employee: ₹{total_wage}")
+        print(f"\nTotal Wage for the Employee: {total_wage}")
+
+# UC8: Compute employee wage for multiple companies using a static method
+class EmployeeWageUC8:
+
+    # Static method since we are passing all required data as parameters (no need to access class state)
+    @staticmethod
+    def compute_employee_wage(company, wage_per_hour, max_days, max_hours):
+        total_hours = 0     # Accumulator for total hours worked
+        total_days = 0      # Counter for total days worked
+        total_wage = 0      # Accumulator for total wage earned
+
+        print(f"\nComputing wages for company: {company}")  # Display company name
+
+        # Loop until either total working hours or days reach their respective limits
+        while total_hours < max_hours and total_days < max_days:
+            total_days += 1
+            emp_check = random.randint(0, 2)  # 0 = Absent, 1 = Full-time, 2 = Part-time
+
+            # Assign working hours based on employee status
+            if emp_check == 1:
+                emp_hours = 8  # Full-time
+            elif emp_check == 2:
+                emp_hours = 4  # Part-time
+            else:
+                emp_hours = 0  # Absent
+
+            total_hours += emp_hours                  # Update total working hours
+            daily_wage = emp_hours * wage_per_hour    # Calculate wage for the day
+            total_wage += daily_wage                  # Add to total wage
+
+            # Print day-wise summary
+            print(f"Day {total_days}: Hours = {emp_hours}, Daily Wage = {daily_wage}")
+
+        # Final output after all days or hours are used
+        print(f"Total wage for {company}: {total_wage}")
