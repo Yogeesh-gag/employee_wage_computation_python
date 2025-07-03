@@ -13,3 +13,6 @@ if __name__ == '__main__':
 
     # UC4 Test Using match-case
     employee_wage.calculate_wage_using_match()
+
+    # UC5 Test call the function to compute monthly wage
+    employee_wage.calculate_monthly_wage()
