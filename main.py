@@ -16,3 +16,6 @@ if __name__ == '__main__':
 
     # UC5 Test call the function to compute monthly wage
     employee_wage.calculate_monthly_wage()
+
+    # UC6 Test: Call the function to compute wage with working hour/day constraints
+    employee_wage.calculate_wage_till_condition()

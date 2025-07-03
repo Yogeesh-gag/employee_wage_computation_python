@@ -55,7 +55,7 @@ def calculate_wage_using_match():
     print(f"Employee Type: {employee_types[emp_check]}")
     print(f"Worked Hours: {emp_hours},Daily Wage: {daily_wage}")
 
-#UC5 Test:
+#UC5 Test: Employee Wage for a full month
 # Function to calculate employee wage for a full month
 def calculate_monthly_wage():
     # wages rate per hour
@@ -81,3 +81,31 @@ def calculate_monthly_wage():
 
     # Print total wage after 20 days
     print(f"Total wage for {working_days} days: {total_wage}")
+
+# UC6 Test: Calculate employee wage until condition
+# Function to calculate employee wage until either max working hours or max working days is reached
+def calculate_wage_till_condition():
+    wage_per_hour = 20      # Fixed wage per hour
+    max_hours = 100         # Maximum allowed working hours in a month
+    max_days = 20           # Maximum allowed working days in a month
+
+    total_hours = 0         # Accumulator for total hours worked
+    total_days = 0          # Accumulator for total days worked
+    total_wage = 0          # Accumulator for total wage
+
+    # Loop continues until either total_hours reaches 100 or total_days reaches 20
+    while total_hours < max_hours and total_days < max_days:
+        total_days += 1                             # Increment working day
+        emp_check = random.randint(0, 2)            # Randomly decide employee type: 0 = Absent, 1 = Full-time, 2 = Part-time
+        emp_hours = get_employee_hours(emp_check)   # Get working hours for the day based on employee type
+        total_hours += emp_hours                    # Add daily hours to total hours
+        daily_wage = emp_hours * wage_per_hour      # Calculate wage for the day
+        total_wage += daily_wage                    # Add daily wage to total wage
+
+        # Print daily status
+        print(f"Day {total_days}: Worked {emp_hours} hrs, Daily Wage: ₹{daily_wage}")
+
+    # Final output after loop ends
+    print(f"\nTotal Days Worked: {total_days}")
+    print(f"Total Hours Worked: {total_hours}")
+    print(f"Total Wage: ₹{total_wage}")
